@@ -249,3 +249,14 @@
 //   }
 // }
 // feb()
+
+
+function countcharCount(word){
+  let charCount = {}
+  for(const char of word){
+    charCount[char] = (charCount[char] || 0)+1
+  }
+  return charCount;
+}
+
+console.log(countcharCount("sssanoj kumar"));
