@@ -1,0 +1,251 @@
+// {
+//   // TDZ starts 
+//   const say = () => console.log(msg); // hi
+
+//   let msg = 'hi'; 
+//   say(); 
+// }
+
+// for(var i=0;i<5;i++){
+//   function print(data){
+//     setTimeout(
+//       ()=>console.log(data),
+//       1000)
+//   }
+//   print(i)
+// } 
+// function sayHi(){
+//   console.log(this) // this will refer to window
+// }
+// sayHi()
+
+// let name = 'john';
+
+// sayHi() // valid
+
+// function sayHi(){
+//   let greet = "hi"
+//   console.log(name)
+// }
+
+// sayHello() // error
+// let sayHello = function(){
+//   console.log(name)
+// }
+
+// let x = 1;
+
+// {
+//   console.log(x) // Reference error
+//   let x = 2; 
+  
+// }
+
+// function createUser(name){
+//   let greeting = 'Hi ' 
+//   function greet(){
+//      return greeting + name + ' is Created';
+//   }
+//   return greet()
+// }
+
+// const greet = createUser('john')
+// console.log(greet)
+
+// function initCounter() {
+//   let count = 0;
+//   return function () {
+//     count++;
+//   };
+// }
+// let counter = initCounter();
+// counter()
+// counter()
+// counter()
+// counter()
+// counter()
+// console.log(counter())
+// foo(); // Hello, world!
+// function foo() {
+//   console.log('Hello, world!');
+// }
+
+// const foo =()=> {
+//   console.log('Hello, world!');
+// }
+
+
+// x=7
+// console.log(x)
+
+// let x;
+
+// function curryAdd(a) {
+//   return function(b) {
+//     return function(c) {
+ 
+//       return a + b + c;
+//     };
+//   };
+// }
+// const addTwo = curryAdd(2);//level 1
+// const addFive = addTwo(3);//level 2
+// console.log(addFive(6));//level 3
+
+// function are_anagrams(str1, str2){
+//   str1 = str1.toLowerCase();
+//   str2 = str2.toLowerCase();
+//   if(str1.length !==str2.length){
+//     return false
+//   }
+//   let charCount1 ={}
+//   for (const char of str1) {
+//     charCount1[char] = (charCount1[char] || 0) + 1;
+//   }
+//   for (const items of str2) {
+//     if(!charCount1[items]){
+//       return false
+//     }
+//     charCount1[items] -=1
+//   }
+//   return true
+// }
+
+// function isAnagram(str1,str2){
+//   str1 = str1.toLowerCase()
+//   str2 = str2.toLowerCase()
+//   if(str1.length !==str2.length){
+//     return false;
+//   }
+//   let arr1 = str1.split('')
+//   let arr2 = str2.split('')
+//   arr1 = arr1.sort()
+//   arr2 = arr2.sort()
+
+//   for(let i=0;i<arr1.length;i++){
+//     if(arr1[i] !==arr2[i]){
+//       return false
+//     }
+//   }
+
+//   return true
+ 
+// }
+
+
+// console.log(isAnagram('hello',"lloeh"))
+
+// function checkPalindrom(str){
+//   str = str.toLowerCase().replace(/\s/g, '');
+// let start=0;
+// let end = str.length-1
+//   while(start<end){
+//     console.log('start',str[start])
+//     console.log('end',str[end])
+//   // let reversed = str.split('').reverse().join('')
+//   // return str===reversed
+
+//   if(str[start] !==str[end]){
+//     return false
+//   }
+//   start++;
+//   end--;
+//   return true
+//   }
+// }
+// console.log(checkPalindrom('naman'))
+
+
+
+// function captalizeStr(str){
+//   let arr = str.split(' ').map((item)=>{
+//     return item[0].toUpperCase()+item.substring(1)
+//   })
+//   return arr.join(' ')
+// }
+// console.log(captalizeStr('hello world'))
+
+// function countcharCount(str){
+ 
+//   let charCount = {};
+//   for (const item of str) {
+//     charCount[item] = (charCount[item] || 0)+1
+//   }
+
+//   console.log(charCount)
+// }
+
+// countcharCount('hello hello hello')
+// function addDot(str) {
+//   let newarr = '';
+//   let temp = [];
+//   for (let i = 0; i < str.length; i++) {
+//     if (str[i] !== ' ') {
+//       temp.push(str[i]);
+//     } else {
+//       if (str.length - 1 === i) {
+//         newarr += temp[0].toUpperCase();
+//       } else {
+//         newarr += temp[0].toUpperCase() + '.';
+//       }
+//       temp = [];
+//     }
+//   }
+//   if (temp.length > 0) {
+//     newarr += temp[0].toUpperCase();
+//   }
+  
+//   return newarr;
+// }
+
+// console.log(addDot('pradeep kumar prajapati'));
+// const arr = [13,2,4,15,12,10,5]
+// let oddElemnet =[]
+// let evvElemnet =[]
+// for(let i=0;i<arr.length; i++){
+//   if(i%2===0){
+//     evvElemnet.push(arr[i])
+//   }else{
+//     oddElemnet.push(arr[i])
+//   }
+// }
+
+// evvElemnet.sort((a, b) => b - a);
+// oddElemnet.sort((a, b) => a - b);
+// const sortedArray = [];
+// let oddIndex = 0;
+// let evenIndex = 0;
+// for(let i=0;i<arr.length;i++){
+//   if(i%2===0){
+//     sortedArray.push(evvElemnet[evenIndex])
+//     evenIndex++
+//   }else{
+//     sortedArray.push(oddElemnet[oddIndex])
+//     oddIndex++
+//   }
+// }
+// console.log(sortedArray)
+// 13,2,12,10,5,15,4
+// 9,2,7,4,5,6,3,8,1
+
+
+// console.log('A');
+
+// (async ()=> {
+//   const a = await 5;
+//   console.log("C");
+// })()
+// console.log('B')
+
+// function feb(){
+//   let n1=0;
+//   let n2 =1;
+//   let nextTerm;
+//   for(let i =0;i<10;i++){
+//     console.log(n1)
+//     nextTerm = n1+n2
+//     n1=n2
+//     n2=nextTerm
+//   }
+// }
+// feb()
